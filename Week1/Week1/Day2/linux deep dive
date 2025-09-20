@@ -1,0 +1,175 @@
+Day 2 —
+
+Deep Dive Linux + Networking Intro: 21-09-2025 Duration: 3 hours
+
+Video watched:
+
+Linux Essentials for Hackers - https://www.youtube.com/watch?v=1hvVcEhcbLM
+
+What I learned :
+
+ Learn networking commands (ifconfig/ip, ping, netstat, ss, traceroute, nslookup, dig).
+
+Try hack me - What is Networking ? room completed-
+
+Solved Over the wire till level 5:- 
+
+Level 1 
+The password for the next level is stored in a file called readme located in the home directory
+
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+Congratulations on your first steps into the bandit game!!
+Please make sure you have read the rules at https://overthewire.org/rules/
+If you are following a course, workshop, walkthrough or other educational activity,
+please inform the instructor about the rules as well and encourage them to
+contribute to the OverTheWire community so we can keep these games free!
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+
+Bandit Level 1 → Level 2
+Level Goal
+The password for the next level is stored in a file called - located in the home directory
+
+bandit1@bandit:~$ cat ./-
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+Bandit Level 2 → Level 3
+Level Goal
+The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
+
+
+bandit2@bandit:~$ ls
+--spaces in this filename--
+bandit2@bandit:~$ cat "--spaces in this filename--"
+cat: unrecognized option '--spaces in this filename--'
+Try 'cat --help' for more information.
+bandit2@bandit:~$ cat "spaces in this filename"
+cat: 'spaces in this filename': No such file or directory
+bandit2@bandit:~$ cat "  spaces in this filename  "
+cat: '  spaces in this filename  ': No such file or directory
+bandit2@bandit:~$ cat "--spaces in this filename--"
+cat: unrecognized option '--spaces in this filename--'
+Try 'cat --help' for more information.
+bandit2@bandit:~$ cat spaces\ in\ this\ filename
+cat: 'spaces in this filename': No such file or directory
+bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename./--
+cat: './--spaces in this filename./--': No such file or directory
+bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename--
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+
+
+Bandit Level 3 → Level 4
+Level Goal
+The password for the next level is stored in a hidden file in the inhere directory.
+
+
+bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ cd inhere
+bandit3@bandit:~/inhere$ ls
+bandit3@bandit:~/inhere$ ls -a
+.  ..  ...Hiding-From-You
+bandit3@bandit:~/inhere$ cat ./...Hiding-From_You
+cat: ./...Hiding-From_You: No such file or directory
+bandit3@bandit:~/inhere$ cat ./.  ..  ...Hiding-From_You
+cat: ./.: Is a directory
+cat: ..: Is a directory
+cat: ...Hiding-From_You: No such file or directory
+bandit3@bandit:~/inhere$ cat . .. ...Hiding-From-You
+cat: .: Is a directory
+cat: ..: Is a directory
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+bandit3@bandit:~/inhere$ cat ./. .. ...Hiding-From-You
+cat: ./.: Is a directory
+cat: ..: Is a directory
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+bandit3@bandit:~/inhere$ ls la
+ls: cannot access 'la': No such file or directory
+bandit3@bandit:~/inhere$ ls -la
+total 12
+drwxr-xr-x 2 root    root    4096 Aug 15 13:16 .
+drwxr-xr-x 3 root    root    4096 Aug 15 13:16 ..
+-rw-r----- 1 bandit4 bandit3   33 Aug 15 13:16 ...Hiding-From-You
+bandit3@bandit:~/inhere$ cat ./...Hiding-From-You
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+bandit3@bandit:~/inhere$
+
+
+Bandit Level 4 → Level 5
+Level Goal
+The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+bandit4@bandit:~$ cd inhere
+bandit4@bandit:~/inhere$ ls
+-file00  -file02  -file04  -file06  -file08
+-file01  -file03  -file05  -file07  -file09
+bandit4@bandit:~/inhere$ cat ./-file00
+  w  f y k  KSv m /  DGo  XI'bandit4@bandit:~/inhere$ cat ./-file01
+ v  ` Rg.  v0>Oh         ]r թ i L_  Lbandit4@bandit:~/inhere$ cat ./-file02
+    J  x" .x     l x  mbandit4@bandit:~/inhere$ cat ./-file03
+| g򸌎 TU  uhjaW1   dS> G  ycbandit4@bandit:~/inhere$ cat ./-file04
+YQ P  P   ; z [;  ն ë␦␦ bandit4@bandit:~/inhere$ cat ./-file05
+    o xv  y 0lkG N  J4"  R& bandit4@bandit:~/inhere$ cat ./-file06
+1D  d
+       M l   1  nq ) йbandit4@bandit:~/inhere$ cat ./-file07
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+bandit4@bandit:~/inhere$ cat ./-file08
+2;  ɸd$7_ n F   9     'uڢ  ibandit4@bandit:~/inhere$ cat ./-file09
+I   0 V ;C r  A<D t    ` bandit4@bandit:~/inhere$
+
+
+
+Bandit Level 5 → Level 6
+Level Goal
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable
+1033 bytes in size
+not executable
+
+
+bandit5@bandit:~$ ls -la
+total 24
+drwxr-xr-x   3 root root    4096 Aug 15 13:16 .
+drwxr-xr-x 150 root root    4096 Aug 15 13:18 ..
+-rw-r--r--   1 root root     220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root root    3851 Aug 15 13:09 .bashrc
+drwxr-x---  22 root bandit5 4096 Aug 15 13:16 inhere
+-rw-r--r--   1 root root     807 Mar 31  2024 .profile
+bandit5@bandit:~$ cd iinhere
+-bash: cd: iinhere: No such file or directory
+bandit5@bandit:~$ cd inhere
+bandit5@bandit:~/inhere$ ls -la
+total 88
+drwxr-x--- 22 root bandit5 4096 Aug 15 13:16 .
+drwxr-xr-x  3 root root    4096 Aug 15 13:16 ..
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere00
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere01
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere02
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere03
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere04
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere05
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere06
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere07
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere08
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere09
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere10
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere11
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere12
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere13
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere14
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere15
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere16
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere17
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere18
+drwxr-x---  2 root bandit5 4096 Aug 15 13:16 maybehere19
+bandit5@bandit:~/inhere$ cat ./..
+cat: ./..: Is a directory
+bandit5@bandit:~/inhere$ find . -readable -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
