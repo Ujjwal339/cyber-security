@@ -1,0 +1,23 @@
+Day 3 — Networking Fundamentals
+
+Date: 2025-09-22
+
+Video(s) watched:
+
+Computer Networking Full Course (freeCodeCamp) — sections on OSI & TCP/IP - https://www.youtube.com/watch?v=qiQR5rTSshw
+
+What I learned :
+
+OSI vs TCP/IP layers, ports vs protocols, basics of TCP 3-way handshake.
+
+Wireshark lab commands / steps:
+
+Open Wireshark → select interface → start capture.
+
+ping google.com while capturing.
+
+Filter: icmp and tcp to inspect handshakes.
+
+Observations:
+
+Found SYN, SYN-ACK, ACK sequence for outbound TCP connections.
