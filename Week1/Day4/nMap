@@ -1,0 +1,48 @@
+Date: 2025-09-23
+
+Video watched:
+
+Nmap full guide (Hacker Joe) -https://www.youtube.com/watch?v=JHAMj2vN2oU&t=33s
+
+Commands executed & observations:
+
+# Discover alive hosts on local network (replace subnet as applicable)
+nmap -sn 192.168.1.0/24
+
+
+# Version detection + OS fingerprinting on a host
+nmap -sV -O 192.168.1.101
+
+nmap -sn 192.168.1.0/24
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-09-23 01:00 +0530
+Nmap scan report for 192.168.1.1
+Host is up (0.0030s latency).
+MAC Address: 60:BD:2C:45:6C:50 (Taicang T&W Electronics)
+Nmap scan report for 192.168.1.4
+Host is up (0.086s latency).
+MAC Address: D2:33:16:E3:E5:1B (Unknown)
+Nmap scan report for 192.168.1.18
+Host is up (0.0050s latency).
+MAC Address: B0:68:E6:76:CA:51 (Chongqing Fugui Electronics)
+Nmap scan report for 192.168.1.26
+Host is up (0.56s latency).
+MAC Address: DC:B7:2E:33:24:23 (Xiaomi Communications)
+Nmap scan report for 192.168.1.28
+Host is up (0.015s latency).
+MAC Address: B2:BE:D8:08:3B:3D (Unknown)
+Nmap scan report for 192.168.1.11
+Host is up.
+Nmap done: 256 IP addresses (6 hosts up) scanned in 43.22 seconds
+
+
+# Top ports with service detection and script scanning
+nmap -sC -sV -oN nmap_scan_host101.txt 192.168.1.101
+
+Notes:
+
+-sV showed service versions (helpful for vulnerability research).
+
+-O required root privileges; results are probabilistic.
+
+#Room completed :- https://tryhackme.com/room/furthernmap
+
