@@ -1,0 +1,28 @@
+Day 5 — Wireshark + Packet Sniffing
+
+Date: 2025-09-24
+
+Video watched:
+
+Wireshark Tutorial for Beginners - https://www.youtube.com/watch?v=TkCSr30UojM
+
+Lab steps:
+
+Start Wireshark and capture on primary interface.
+
+Performed a DNS lookup  and HTTP GET to a plain HTTP test page.
+
+Used filters: dns, http, tcp.port == 80.
+
+Key filters used:
+
+dns
+
+http
+
+ip.addr == x.x.x.x
+
+Observations  :
+
+DNS queries are visible in plain text.
+
