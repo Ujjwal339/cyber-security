@@ -1,0 +1,20 @@
+Date: 2025-09-27
+
+Topic: Netcat (nc) — listeners
+
+1) Video 
+
+Watched: Netcat tutorial — https://youtu.be/KlzSBk7VMss?si=bRLoyXAEuI0giSVP.
+
+2) Goals for today
+
+Understood Netcat syntax for listening and connecting.
+
+3) Commands executed
+Start a communication 
+nc -vv 10.225.133.205 1337
+
+On attacker (listener):
+Start a listener 
+nc -lvnp 1337
+
