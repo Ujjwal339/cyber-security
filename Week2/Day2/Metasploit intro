@@ -1,0 +1,22 @@
+# Week 2 — Day 2: Metasploit Intro
+
+**Date:** 2025-10-02
+**Duration:** 3 hours
+
+## Videos watched
+- [Complete Metasploit System Hacking Tutorial! ] (https://www.youtube.com/watch?v=_C7nRJ6WsmI)
+- [Reverse Shells: A Guide to Creating Payloads with msfvenom and Meterpreter] (https://www.youtube.com/watch?v=IGjwWpgDNek)
+
+## Lab target
+- attacker VM:  KAli 1 (192.168.147.102) 
+- Target VM: Kali 22 (192.168.147.101) 
+
+## Commands used / actions
+- msfvenom command: 
+- msfconsole flow:
+
+## Findings
+- Module used: exploit/unix/ftp/vsftpd_234_backdoor
+- Successfully obtained: [shell / meterpreter]
+- Post-exploit checks: `whoami` -> root/user (paste output)
+
